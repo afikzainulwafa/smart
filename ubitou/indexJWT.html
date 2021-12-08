@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+            Login, send out usr/pwd
+        -->
+        <h1>驗證Login with JWT(Json Web Token)</h1>
+        <input type="text" id="VarUsr" placeholder='USER'> <br>
+        <input type="text" id="VarPwd" placeholder='PASSWORD'> <br>
+        <!--<p id="VarUsr">tcust01</p>
+        <p id="VarPwd">smartc0</p>-->
+
+        <input type="submit" value="submit" onclick="loginJWT()"> <br><br>
+
+        <p>Login : <span id="RspLogin" ></span></p>
+        <p>Access Token : <span id="RspAccessToken" ></span></p>
+        <p>Refresh Toke : <span id="RspRefreshToken" ></span></p>
+
+        <!-- 
+            送出確認是否
+            1. Login ? 成功的話就會回傳使用者
+            2. Expire ?
+        -->
+        <input type="submit" value="Login Check" onclick="loginChk()"> <br><br>
+        <p>Local Usr : <span id="localUsr" ></span></p>
+        <p>Local Access Token : <span id="localAccessToken" ></span></p>
+
+        <!-- 
+            refresh toeken
+            當access_toeken過期時，可送出refresh_toeken取得全新的acces_toeken，省掉讓user要輸入usr/pwd的麻煩動作
+        -->
+        <input type="submit" value="Toeken Refresh" onclick="RefreshToeken()"> <br><br>
+        <p>New Token : <span id="RspNewToken" ></span></p>
+     
+        <!--
+        <input type="submit" value="GET SDVAL" onclick="getSdval()"> <br><br>
+        -->
+        <input type="submit" value="GET SENSORs" onclick="getSdval()"> <br><br>
+        js_test()
+
+
+        <script src="./js/post.js"></script>
+    </body>
+</html>
